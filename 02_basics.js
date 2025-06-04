@@ -1,4 +1,4 @@
-// Arrays in JS
+// Arrays in JS (Part I)
 //? It can be homo/hetero in case of data types for storing values
 //? Array copy operations in JS => creates shallow copy
 //* Shallow Copy => A shallow copy of an object is a copy whose properties share the same references. When we change either the source or the copy, we may also cause the other object to change too
@@ -46,5 +46,37 @@ console.log(n2); //* [1,2,3]
 console.log("C", arr); //* Original Array after splicing (Pt.C) =>
 //* C [ 0, 4, 5 ]
 //? IMP => difference btw slice and splice is that slice does not modify the original array but splice modifies and removes a part from the original array
+
+// Arrays in JS (Part II)
+const marvel_heros = ["thor", "ironman", "drStrange"]
+const dc_heros = ["superman", "batman", "flash"]
+
+//! Merging two arrays
+//? using push()
+marvel_heros.push(dc_heros)
+console.log(marvel_heros); //* [ 'thor', 'ironman', 'drStrange', [ 'superman', 'batman', 'flash' ] ] => it's not proper and not preferred method
+
+//? using concat()
+//? The concat() method does not modify the original array — it returns a new array combining the elements.
+const all_heros = marvel_heros.concat(dc_heros) //? Preferred method
+console.log(all_heros); 
+
+//? using spread operator
+const marvelXdc = [...marvel_heros, ...dc_heros] //? most used
+console.log(marvelXdc); //*[ 'thor', 'ironman', 'drStrange', 'superman', 'batman', 'flash' ]
+
+const arr3 = [1,2,3,[4,5,6],7,[6,7,[4,5]]]
+const newArr3 = arr3.flat(Infinity) //* spreads all the elements of the array
+console.log(newArr3);
+
+//! to convert the recevied data to arrays 
+console.log(Array.isArray("charles")) //* checks for an array (returns in boolean)
+console.log(Array.from("charles")); //* converts anything to arrays
+console.log(Array.from({name: "lando"})); //* specify which needs to be converted to array key or value, otherwise it will return a empty array
+
+let score1 = 100
+let score2 = 200
+let score3 = 300
+console.log(Array.of(score1, score2, score3)); //? of -> Returns a new array from a set of elements => [ 100, 200, 300 ]
 
 

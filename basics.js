@@ -116,6 +116,37 @@ console.log(url.replace("%20", "-")); //* https://abcd.com/xyz-pqr => replaces t
 
 console.log(url.includes("abc")); //* true => gives boolean result on the basis if the given value is present or not
 
+// Number in JS
+const score = 300 //* JS automatically defines it as a number
+console.log(typeof score)
+
+const balance = new Number(300) //* explicitly defining a number
+console.log(typeof balance) //* Number Object
+
+//! Properties
+console.log(typeof balance.toString()); //* converts it to a String
+console.log(balance.toFixed(2)); //* 300.00 => rounds off to given digits
+
+const newNumber = 24.987
+console.log(newNumber.toPrecision(2)); //* (Returns a String) => gives precise value according to the given the number (1-21)
+
+const val = 1000000
+console.log(val.toLocaleString()); //* US standard comma speration used
+console.log(val.toLocaleString('en-IN')); //* Indian standard
+
+// Math in JS
+console.log(Math.abs(-3)); //* works as modulus (-ve to +ve)
+console.log(Math.round(4.6)); //* helps in rounding off
+console.log(Math.ceil(4.2)); //* upper value related to value
+console.log(Math.floor(4.2)); //* lower value realted to value
+
+
+
+
+
+
+
+
 
 
 

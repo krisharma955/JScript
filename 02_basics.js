@@ -169,3 +169,15 @@ console.log(Object.values(instaUser)); //* [ '123abc', 'Sammy', false ] => array
 console.log(Object.entries(instaUser)); //* [ [ 'id', '123abc' ], [ 'name', 'Sammy' ], [ 'isLoggedIn', false ] ] => each key value is converted to array and their are nested arrays
 
 console.log(instaUser.hasOwnProperty("isLoggedIn")); //* Determines whether an object has a property with the specified name. (returns in booelan)
+
+//! De-structuring Objects
+const course = {
+    coursename: "JS",
+    price: 999,
+    coursePlatform: "YT",
+}
+console.log(course.coursePlatform); //* YT
+
+//? Different syntax
+const {coursePlatform: cp} = course //* increases the readability and delivers and clean code => used in react
+console.log(cp); //* YT

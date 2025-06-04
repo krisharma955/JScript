@@ -20,7 +20,8 @@ console.log(result);
 
 //! More Examples
 function loginUserMsg(username = "sam") { //* we have given a default value, if no value is passed then sam will be used.
-    if(username === undefined){ //* a check for undefined, (!username) can also be used
+    if(!username){ //* a check for undefined, 
+    //* (username === undefined) can also be used
         console.log("Please enter a username");
         return
     }

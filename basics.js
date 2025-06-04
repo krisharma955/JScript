@@ -77,7 +77,7 @@ console.log(`Hello, My firstName is ${firstName} and secondName is ${secondName}
 
 //! Declaring using objects
 const gameName = new String("Blaze")
-console.log(gameName); //? interally their are key-value pairs (in console)
+console.log(gameName); //? internally their are key-value pairs (in console)
 /*
 0: "B"
 1: "l"

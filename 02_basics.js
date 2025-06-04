@@ -86,7 +86,7 @@ console.log(Array.of(score1, score2, score3)); //? of -> Returns a new array fro
 //! Object literals
 //? Declaration
 const mySym = Symbol("key") //* declaring a symbol
-const user = { 
+const user = { //* it's a non-singleton object
     name: "vettel",
     "full name": "Sebestian Vettel",
     [mySym]: "mykey",
@@ -101,7 +101,7 @@ const user = {
 console.log(user.team); //* Redbull
 console.log(user["team"]); //* Redbull [preferred]
 console.log(user["full name"]) //* this can't be accessed using . method
-console.log(user[mySym]); //? Q. declaring a symbol, adding to keys of thje objecxt and using it as a key
+console.log(user[mySym]); //? Q. declaring a symbol, adding to keys of the object and using it as a key
 
 //? Changing values 
 user.team = "AstonMartin"
@@ -110,7 +110,7 @@ console.log(user);
 //? Freezing the Object => to avoid any changes
 ////Object.freeze(user)
 ////user.wdc = 5 
-console.log(user); //* still wdc = 4 (no changes)
+////console.log(user); //* still wdc = 4 (no changes)
 
 user.greeting = function() {
     console.log("HOLA");
@@ -122,3 +122,50 @@ user.greeting2 = function() {
 console.log(user.greeting); //* [Function (anonymous)] => function is not executed, we just got a reference
 console.log(user.greeting());
 console.log(user.greeting2());
+
+//! Object Constructors
+const instaUser = new Object() //* {declaration} =>it's a singleton object
+
+//? Adding elements
+instaUser.id = "123abc"
+instaUser.name = "Sammy"
+instaUser.isLoggedIn = false
+console.log(instaUser);
+
+const regUser = {
+    email: "abc@gmail.com",
+    fullName: {
+        userfullName : {
+            firstName: "krish",
+            lastName: "Sharma",
+        }
+    }
+}
+console.log(regUser.fullName.userfullName.firstName) //* krish => accessing objects inside objects
+
+//! Merging Objects
+const obj1 = {
+    1: "a",
+    2: "b",
+}
+const obj2 = {
+    3: "c",
+    4: "d",
+}
+
+//? Object.assign()
+const obj3 = Object.assign({}, obj1, obj2) //? passing empty array is a good practice it acts as target and all other are acted as source => Object.assign() is a static fxn
+console.log(obj3); //* { '1': 'a', '2': 'b', '3': 'c', '4': 'd' }
+
+//? Using spread operator (most used)
+const obj4 = {...obj1, ...obj2}
+console.log(obj4); //* { '1': 'a', '2': 'b', '3': 'c', '4': 'd' }
+
+//! keys, values, entries & hasOwnProperty of an Object
+console.log(Object.keys(instaUser)); //* [ 'id', 'name', 'isLoggedIn' ] => returned in a array
+
+console.log(Object.values(instaUser)); //* [ '123abc', 'Sammy', false ] => array is returned
+
+console.log(Object.entries(instaUser)); //* [ [ 'id', '123abc' ], [ 'name', 'Sammy' ], [ 'isLoggedIn', false ] ] => each key value is converted to array and their are nested arrays
+
+console.log(instaUser.hasOwnProperty("isLoggedIn")); //* Determines whether an object has a property with the specified name. (returns in booelan)

@@ -139,6 +139,57 @@ console.log(Math.abs(-3)); //* works as modulus (-ve to +ve)
 console.log(Math.round(4.6)); //* helps in rounding off
 console.log(Math.ceil(4.2)); //* upper value related to value
 console.log(Math.floor(4.2)); //* lower value realted to value
+console.log(Math.max(1,2,3,4,5)); //* Max value
+console.log(Math.min(1,2,3,4,5)); //* Min value
+
+//! Math.random()
+console.log(Math.random()); //* gives random values btw 0 & 1
+console.log(Math.floor(Math.random()*10) + 1); //* the random value gets multplied by 10 & to avoid getting 0 (we did a +1) & for getting a natural number we did a math.floor
+
+const min = 1
+const max = 6
+console.log(Math.floor(Math.random() * (max - min + 1)) + min); //? this formula gets us the numbers btw 1(min) to 6(max)
+
+// Dates in JS
+let myDate = new Date() //* created a date object
+console.log(typeof myDate); //? object
+
+//! Different types => Date can be represented
+console.log(myDate); //* 2025-06-04T09:19:23.125Z (unreadable)
+console.log(myDate.toString()); //* Wed Jun 04 2025 14:50:04 GMT+0530 (India Standard Time) {better}
+console.log(myDate.toDateString()); //* Wed Jun 04 2025 
+console.log(myDate.toLocaleDateString()); //* 4/6/2025
+console.log(myDate.toLocaleString()); //* 4/6/2025, 2:51:53 pm
+
+//! Declare a date
+let myCreatedDate = new Date(2022, 0, 2, 5, 4, 34) //? format -> (Year, Month, Date, Hour, Minutes, Seconds) => Months in JS starts from 0
+console.log(myCreatedDate.toLocaleString()); //* 2/1/2022, 5:04:34 am
+
+let myCreatedDate2 = new Date("09-05-2005") //? DD-MM-YYYY
+console.log(myCreatedDate2.toLocaleString()); //* 5/9/2005, 12:00:00 am
+
+let myTimeStamp = Date.now() //? gives the current date (in ms) => useful in polls
+console.log(myTimeStamp); //* time in ms (1749029513001)
+console.log(myCreatedDate.getTime()); //* 1641080074000 {they are comparable}
+console.log(Math.floor(Date.now()/1000)) //? to get value in seconds
+
+//! Methods
+let newDate = new Date()
+console.log(newDate.getMonth() + 1); //? to get month (+1 to avoid confusion for user)
+console.log(newDate.getDay() + 1); //? to get day
+//? Many More....
+
+console.log(newDate.toLocaleString('default', {
+    weekday: "long",
+    dateStyle: "full",
+})) //? this method is quite useful of the customization it offers
+
+
+
+
+
+
+
 
 
 

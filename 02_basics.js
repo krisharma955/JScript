@@ -79,4 +79,46 @@ let score2 = 200
 let score3 = 300
 console.log(Array.of(score1, score2, score3)); //? of -> Returns a new array from a set of elements => [ 100, 200, 300 ]
 
+// Objects in JS
+//? Two methods to declare objects -> i) like literal, ii) like constructor
+//? when defined using literals -> singleton is not formed, but when defined using constructors -> singleton is formed
 
+//! Object literals
+//? Declaration
+const mySym = Symbol("key") //* declaring a symbol
+const user = { 
+    name: "vettel",
+    "full name": "Sebestian Vettel",
+    [mySym]: "mykey",
+    wdc: 4,
+    location: "Germany",
+    team: "Redbull",
+    retired: true,
+    raceWeekends: ["Saturday", "Sunday"]
+} //? JS automatically takes keys as strings
+
+//? Accessing Elements
+console.log(user.team); //* Redbull
+console.log(user["team"]); //* Redbull [preferred]
+console.log(user["full name"]) //* this can't be accessed using . method
+console.log(user[mySym]); //? Q. declaring a symbol, adding to keys of thje objecxt and using it as a key
+
+//? Changing values 
+user.team = "AstonMartin"
+console.log(user);
+
+//? Freezing the Object => to avoid any changes
+////Object.freeze(user)
+////user.wdc = 5 
+console.log(user); //* still wdc = 4 (no changes)
+
+user.greeting = function() {
+    console.log("HOLA");
+}
+user.greeting2 = function() {
+    console.log(`Hola, Vettel ${this["full name"]}`);
+}
+
+console.log(user.greeting); //* [Function (anonymous)] => function is not executed, we just got a reference
+console.log(user.greeting());
+console.log(user.greeting2());

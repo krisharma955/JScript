@@ -34,8 +34,10 @@ function calculateCartPrice(...num) { //* using rest(...) operator
     return num
 }
 console.log(calculateCartPrice(10,20,30)) //* 10 => when rest(...) operator is not used => it takes only the first value
-console.log(calculateCartPrice(10,20,30)); //* [ 10, 20, 30 ] => after using rest => multiple arguments can be entered and a array is returned => and hence we can manupilate the data in the array accordingly
-//? Rest and Spread Operator both are (...), they vary according to the use
+console.log(calculateCartPrice(10,20,30)); //* [ 10, 20, 30 ] => after using rest => multiple arguments can be enteredy  and a arrais returned => and hence we can manupilate the data in the array accordingly
+//? Rest and Spread Operator both are (...).
+//? Rest => used to collect multiple elements into a single array or object. {kind of GATHERING}
+//? Spread => used to expand elements of an array or object {kind of spreading out}
 
 function calculateCartPriceII(val1, val2, ...num) {
     return num
@@ -74,22 +76,23 @@ if(true) {
 }
 ////console.log(a); //* ERROR => which is correct because a is defined inside the if block, it can only be used inside that block of code
 ////console.log(b); //* ERROR
-console.log(c); //* 3 => it can be used outside the block of code it is declared (PROBLEM) => Hence, let is more preferred
+console.log(c); //* 3 => it can be used outside the block of code it is declared (PROBLEM) => Hence, let is more preferred {var => issues in block & functional scope}
 
 //! Global Scope => A variable declared outside any function or block. It can be accessed anywhere in the code.
 let x = 10
 function printx() {
-    console.log(x) //* x is a global variable and can be accessed
+    console.log(x) //* 10 => x is a global variable and can be accessed
 }
 printx() //* 10
 
 //! Local Scope => A variable declared inside a function or block. It can only be accessed there.
 function printy() {
     let y = 10 //* can only be used inside this block i.e this fxn
+    console.log(y); //* 10 => y can only be accessed here
 }
 ////console.log(y) //* error => y is not defined => y is a local variable and can't be accessed globally
 
-//! Nested Scopes closure
+//! Nested Scopes / closure(?)
 function one() {
     const username = "thor"
     function two() {
@@ -129,7 +132,7 @@ const webuser = {
     username: "krish",
     price: 999,
     welcomeMsg: function() {
-        console.log(`${this.username} welcome to website`) //? while referring to current context (present time) (this) is used, It tells about current values
+        console.log(`${this.username} welcome to website`) //? while referring to current context (present time) [this] is used, It tells about current values
         console.log(this) //* { username: 'krish', price: 999, welcomeMsg: [Function: welcomeMsg] }
     }
 }
@@ -137,4 +140,4 @@ console.log(webuser.welcomeMsg()); //* krish welcome to website
 webuser.username = "blaze" //* context changed and now according to the current context username: "blaze"
 console.log(webuser.welcomeMsg()); //* blaze welcome to website
 //* { username: 'blaze', price: 999, welcomeMsg: [Function: welcomeMsg] }
-console.log(this) //* {}
+console.log(this) //* {} : in strict environment, otherwise : global object (in browser)

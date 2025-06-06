@@ -140,4 +140,48 @@ console.log(webuser.welcomeMsg()); //* krish welcome to website
 webuser.username = "blaze" //* context changed and now according to the current context username: "blaze"
 console.log(webuser.welcomeMsg()); //* blaze welcome to website
 //* { username: 'blaze', price: 999, welcomeMsg: [Function: welcomeMsg] }
-console.log(this) //* {} : in strict environment, otherwise : global object (in browser)
+console.log(this) //* {} : in strict environment (here global has no context currently), otherwise : global object (in browser)
+//? when it is executed in browser it shows Windows objects.
+
+function printThis() {
+    let username = "peter"
+    console.log(this.username); //* undefined (?)
+}
+printThis()
+
+const printThis2 = function() {
+    let username = "peter"
+    console.log(this.username); //* undefined
+}
+console.log(printThis())
+
+//! Arrow Functions
+const fxn = () => {
+    let username = "peter"
+    console.log(this.username); //* undefined
+    console.log(this); //* {}
+}
+fxn()
+
+//? Basic Arrow function
+const mulTwo = (num1, num2) => {
+    return num1*num2
+}
+console.log(mulTwo(2,3))
+
+//? Implicit Return
+const subTwo = (num1, num2) => (num1-num2) //* Curly braces used => return statement should be used, if parentheses are used no return statement [this method is used in REACT]
+console.log(subTwo(2,1)); //* 1
+
+const returnObj = () => ({username: "krish"}) //* returning Object
+console.log(returnObj()); //* { username: 'krish' }
+
+// Immediately Invoked Function Expression (IIFE)
+//? An IIFE (Immediately Invoked Function Expression) is a function that runs as soon as it is defined. It helps create a private scope and avoid polluting the global namespace.
+(function func() { //* syntax -> (fxn)(), it is a named IIFE (named func)
+    console.log(`DB CONNECTED`);
+}) (); //* semicolon is must while writing more than one IIFE
+
+((name) => { //* using arrow fxn, unnamed IIFE, passing of parameters
+    console.log(`DB CONNECTED TWO ${name}`);
+}) ("witch");

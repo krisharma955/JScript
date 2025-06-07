@@ -1,19 +1,19 @@
 // ControL Flow
 //! if - else if - else conditional statements
-// if(condition) {} 
-// else if(condition) {}
-// else {}  
+if(condition) {} 
+else if(condition) {}
+else {}  
 
 const userLoggedIn = true
 const debitCard = true
 
 //! switch
-// switch (key) {
-//     case value:
-//         break;
-//     default:
-//         break;
-// }
+switch (key) {
+    case value:
+        break;
+    default:
+        break;
+}
 
 //! truthy & falsy values
 const userEmail = "abc@gmail.com"
@@ -49,7 +49,7 @@ val1 = null ?? 1 ?? 2 ?? 3
 console.log(val1); //* 1 (first value is assigned after null/undefined)
 
 //! Ternary Operator
-//condition ? true : false 
+//?condition ? true : false 
 const price = 100
 price>=100 ? console.log("price>=100") : console.log("price<100")
 

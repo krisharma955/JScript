@@ -100,7 +100,7 @@ console.log(gameName.charAt(3)); //* z
 console.log(gameName.indexOf("a")); //* 2
 
 //? substring() & slice()
-console.log(gameName.substring(1,4)); //* laz => (start, end) => start is included but end is not included (no -ve values)
+console.log(gameName.substring(1,4)); //* laz => (start, end) => start is included but end is not included (no -ve values), -ve value is treated as 0
 console.log(gameName.slice(-6,4)); //* Blaz => negatives are allowed
 
 //? trim() & split()
@@ -110,7 +110,7 @@ console.log(Str.trim()); //* removes all the white spaces
 const Str2 = "java-script-web-dev"
 console.log(Str2.split("-")); //* converted to an array on the basis of "-" => [ 'java', 'script', 'web', 'dev' ]
 
-//? replace() & include()
+//? replace() & includes()
 const url = "https://abcd.com/xyz%20pqr"
 console.log(url.replace("%20", "-")); //* https://abcd.com/xyz-pqr => replaces the values => (to be replaced, with whom it should be replaced)
 

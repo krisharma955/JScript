@@ -49,7 +49,6 @@ val1 = null ?? 1 ?? 2 ?? 3
 console.log(val1); //* 1 (first value is assigned after null/undefined)
 
 //! Ternary Operator
-//?condition ? true : false 
+//? condition ? true : false 
 const price = 100
 price>=100 ? console.log("price>=100") : console.log("price<100")
-

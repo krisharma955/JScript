@@ -39,4 +39,33 @@
 
 // High Order Array Loops
 // //! for of loop
+const arr = [1,2,3,4,5] //* on arrays
+for (const i of arr) {
+    console.log(i);
+}
 
+const greetings = "Hello World!" //* on strings
+for(const i of greetings) {
+    console.log(`Each char is ${i}`);
+}
+
+//! Maps(Data type) => It has unique values (key-value pairs)
+const map = new Map()
+map.set("IN", "India")
+map.set("IN", "India")
+map.set("UK", "United Kingdom")
+map.set("Fr", "France")
+console.log(map) //* Map(3) { 'IN' => 'India', 'UK' => 'United Kingdom', 'Fr' => 'France' }
+//? India only came once inside it, maps holds unique values and order
+
+for(const [key, value] of map) {
+    console.log(key, ":-", value);
+}
+
+const myobj = {
+    "game1": "pes",
+    "game2": "fifa"
+}
+for(const [key,value] of myobj) {
+    
+}

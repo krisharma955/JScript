@@ -49,7 +49,7 @@ console.log(typeof myFunc); //* function (it's actually function object)
 
 // Memory
 //? Stack => used when primitive data types are used => we get a copy of value (bcz primitive data types are call by value)
-//? Heap => used when non-primitive data types are used => we get a reference of the original value (bcz non-primitve data types are call byuu reference)
+//? Heap => used when non-primitive data types are used => we get a reference of the original value (bcz non-primitve data types are call by reference)
 
 //! Stack 
 let name1 = "lando"
@@ -183,30 +183,3 @@ console.log(newDate.toLocaleString('default', {
     weekday: "long",
     dateStyle: "full",
 })) //? this method is quite useful of the customization it offers
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
